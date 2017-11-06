@@ -199,7 +199,7 @@ router.post('/pokemon', function(req, res) {
       if (err) {
         console.log(err);
       } else {
-        console.log('Inserted %d documents into the "pokemon" collection. The documents inserted with "_id" are:', result.length, result);
+        console.log('Inserted documents into the "pokemon" collection. The documents inserted with "_id" are:', result);
         res.end('{"success" : "Updated Successfully", "status" : 200}');
       }
     });
