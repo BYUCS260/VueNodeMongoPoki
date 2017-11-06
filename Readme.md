@@ -136,7 +136,7 @@ MongoClient.connect(dbUrl, function (err, db) {
 
     // do some work here with the database.
     collection = db.collection('pokemon');
-    collection.remove(); // Remove anything that was there before
+    // collection.remove(); // Remove anything that was there before
     collection.insert(pokemon, function (err, result) {
       if (err) {
         console.log(err);
