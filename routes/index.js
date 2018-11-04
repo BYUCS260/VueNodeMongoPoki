@@ -11,7 +11,12 @@ router.get('/pokemon', function(req, res) {
   console.log("In Pokemon");
   res.send(pokemon);
 });
-
+router.post('/pokemon', function(req, res) {
+    console.log("In Pokemon Post");
+    console.log(req.body);
+    pokemon.push(req.body);
+    res.end('{"success" : "Updated Successfully", "status" : 200}');
+}); 
 module.exports = router;
 
 /**
@@ -44,3 +49,4 @@ var pokemon = [
     avatarUrl: 'https://s-media-cache-ak0.pinimg.com/originals/7e/3b/67/7e3b67c53469cc4302035be70a7f2d60.gif'
   }
 ];
+
