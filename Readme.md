@@ -11,46 +11,6 @@ npm start
 
 And make sure the application displays pokemon defined in the routes/index.js back end.
 
-## What about saving a new pokimon?
-
-First add a form to the public/index.html file.
-```
-<h1> Enter A New Poki</h1>
-  <form id="newPoki" ng-submit="addPoki()">
-    Name: <input type="text" ng-model="Name" value=""><br>
-    Url: <input type="url" ng-model="Url" value=""><br>
-    <input type="submit" value="Submit">
-  </form>
-```
-
-And add the function to execute on the submit
-```javascript
-    $scope.addPoki = function() {
-      var formData = {name:$scope.Name,avatarUrl:$scope.Url};
-      console.log(formData);
-      pokemonFetcher.post(formData); // Send the data to the back end
-      $scope.pokemon.push(formData); // Update the model
-    }
-```
-And we need the pokemonFetcher post function
-```javascript
-    post: function (formData) {
-      return $http
-         .post(API_ROOT,formData)
-         .then(function (resp) {
-           console.log("Post worked");
-         })
-    } 
-```
-And now we need to build the back end.  We have created an object that should be pushed directly into the array on the back end.  Once we update the array, it should be permanent even if you refresh the browser.  Edit routes/index.js
-```javascript
-router.post('/pokemon', function(req, res) {
-    console.log("In Pokemon Post");
-    console.log(req.body);
-    pokemon.push(req.body);
-    res.end('{"success" : "Updated Successfully", "status" : 200}');
-}); 
-```
 ## Connecting to MongoDB
 
 ##### 1. Get access to MongoDB in our javascript
