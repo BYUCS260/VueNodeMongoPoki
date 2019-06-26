@@ -9,6 +9,12 @@
 
 <body>
   <div id="app">
+    <h1> Enter A New Poki</h1>
+    <form v-on:submit.prevent="addItem">
+      Name: <input type="text" v-model="pokiName">
+      URL: <input type="url" v-model="pokiURL">
+      <button type="submit">Add</button>
+    </form>
     <div v-if='!pokis.length' class='no-pokemon center stretch'>
       <h1 class='h1'>
         Set up your endpoint at `/pokemon` to get this view working
