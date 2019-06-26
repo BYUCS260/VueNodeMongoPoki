@@ -1,10 +1,10 @@
-# angularNodeMongoPoki
-Simple introduction to attaching a mongo database to a angular-node project
+# VueNodeMongoPoki
+Simple introduction to attaching a mongo database to a Vue-Node project
 
-We will start with a simple angular application that talks to a node back end.  We went through this tutorial before, but you may want to clone this repository to get started
+We will start with a simple Vue application that talks to a node back end.  We went through this tutorial before, but you may want to clone this repository to get started
 <pre>
-git clone https://github.com/mjcleme/angularNodeMongoPoki
-cd angularNodeMongoPoki
+git clone https://github.com/BYUCS260/VueNodeMongoPoki
+cd VueNodeMongoPoki
 npm install
 npm start
 </pre>
