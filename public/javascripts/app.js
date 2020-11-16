@@ -14,7 +14,7 @@ var app = new Vue({
     async getpokis() {
       // `this` points to the vm instance
       console.log("get pokis");
-      var url = "http://yourserver:4200/pokemon";
+      var url = "http://yourserver:3000/pokemon";
       try {
         let response = await axios.get(url);
         this.pokis = response.data;
