@@ -105,6 +105,12 @@ MongoClient.connect(dbUrl, { useUnifiedTopology: true, useNewUrlParser: true }, 
     // do some work here with the database.
     var db = client.db('pokemon'); //Connect to the database
     db.createCollection('poke', function(err, result) {
+      if (err) {
+        collection = db.collection('poke');
+        console.log(err); //optional, just so you can see the error
+        return; // the database is likely filled anyway, so not worth checking to add to the collection
+      }
+
       collection = result;
 
       collection.stats(function(err, stats) {
