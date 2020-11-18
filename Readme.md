@@ -1,6 +1,6 @@
 # VueNodeMongoPoki
 Simple introduction to attaching a mongo database to a Vue-Node project
-
+If you are using your DigitalOcean server, then follow the instructions from "Activity N3: Learning MongoDB" which will set up nginx to run on port 8080.  Then use the command "export PORT=8080" to cause node to run on this port.
 We will start with a simple Vue application that talks to a node back end.  We went through this tutorial before, but you may want to clone this repository to get started
 <pre>
 git clone https://github.com/BYUCS260/VueNodeMongoPoki
