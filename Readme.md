@@ -63,6 +63,7 @@ Go ahead and run `npm start` in your terminal again, and you should expect to se
 Let's put that collection variable we already declared to work. Notice that in the callback function we provided to `MongoClient.connect`, we expect to receive a `client` variable. We will use that to select the `pokemon` database and then create a `poke` collection like so:
 
 ```js
+    var db = client.db('pokemon'); //Connect to the database
     db.createCollection('poke', function(err, result) {
       if (err) {
         collection = db.collection('poke');
