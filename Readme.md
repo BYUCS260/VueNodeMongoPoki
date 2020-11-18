@@ -39,7 +39,7 @@ var dbUrl = 'mongodb://localhost:27017/';
 var collection
 
 // Use connect method to connect to the Server
-MongoClient.connect(dbUrl, { useNewUrlParser: true }, function(err, client) {
+MongoClient.connect(dbUrl, { useUnifiedTopology: true, useNewUrlParser: true }, function(err, client) {
   if (err) {
     console.log('Unable to connect to the mongoDB server. Error:', err);
   }
@@ -63,14 +63,14 @@ Go ahead and run `npm start` in your terminal again, and you should expect to se
 Let's put that collection variable we already declared to work. Notice that in the callback function we provided to `MongoClient.connect`, we expect to receive a `client` variable. We will use that to select the `pokemon` database and then create a `poke` collection like so:
 
 ```js
-  var db = client.db('pokemon'); //Connect to the database pokemon
-  db.createCollection('poke', function(err, result) {
-	if (err) {
-		collection = db.collection('poke');
-		console.log(err); //optional, just so you can see the error
-		return; // the database is likely filled anyway, so not worth checking to add to the collection
-	}
-	collection = result;
+    db.createCollection('poke', function(err, result) {
+      if (err) {
+        collection = db.collection('poke');
+        console.log(err); //optional, just so you can see the error
+        return; // the database is likely filled anyway, so not worth checking to add to the collection
+      }
+      collection = result;
+    });
 ```
 ##### 2. Insert data
 Now we will use that collection object to insert the array `pokemon` like so:
@@ -94,7 +94,7 @@ All said and done our code connecting to the db and inserting our array of pokem
 
 ```js
 // Use connect method to connect to the Server
-MongoClient.connect(dbUrl, { useNewUrlParser: true }, function(err, client) {
+MongoClient.connect(dbUrl, { useUnifiedTopology: true, useNewUrlParser: true }, function(err, client) {
   if (err) {
     console.log('Unable to connect to the mongoDB server. Error:', err);
   }
